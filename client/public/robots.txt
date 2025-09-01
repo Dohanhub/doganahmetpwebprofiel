@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ahmetdogan.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow important pages
+Allow: /about
+Allow: /experience
+Allow: /contact
+Allow: /services
+Allow: /testimonials
+
+# Crawl delay (optional)
+Crawl-delay: 1

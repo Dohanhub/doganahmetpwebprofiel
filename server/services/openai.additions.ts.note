@@ -1,0 +1,2 @@
+// Note: This is a no-op placeholder created by the assistant to ensure we can patch
+// server/services/openai.ts reliably without depending on mojibake matching.

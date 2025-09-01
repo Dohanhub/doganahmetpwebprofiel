@@ -1,0 +1,19 @@
+align-itemscenter
+box-sizingborder-box
+colorrgb(195, 190, 182)
+color-schemedark
+displayflex
+font-familycirce
+font-size18.6856px
+font-stylenormal
+font-weight400
+height3449.26px
+letter-spacingnormal
+line-height28.0284px
+overflow-wrapbreak-word
+positionrelative
+text-size-adjust100%
+text-transformnone
+unicode-bidiisolate
+width320px
+-webkit-font-smoothingantialiased

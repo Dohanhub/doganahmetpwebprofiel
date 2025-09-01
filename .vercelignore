@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Development files
+.env.local
+.env.development
+.env.test
+
+# Test files
+test/
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Documentation
+*.md
+docs/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary folders
+tmp/
+temp/
+
+# Attached assets (if not needed in production)
+attached_assets/
+
+# Deployment scripts
+deploy-*.sh
+deploy-*.bat
+deploy-*.ps1
+
+# VPS setup files
+setup-vps.sh
+VPS-SETUP-GUIDE.md
+
+# Testing guides
+TESTING-GUIDE.md
+TESTING-SETUP-COMPLETE.md

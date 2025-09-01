@@ -1,0 +1,143 @@
+/* Replit Theme Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme Variables */
+  --replit-light-bg: #ffffff;
+  --replit-light-bg-secondary: #f7f7f8;
+  --replit-light-bg-tertiary: #ededf0;
+  --replit-light-text: #2d2d2d;
+  --replit-light-text-secondary: #5c5c5c;
+  --replit-light-border: #e0e0e0;
+  --replit-light-primary: #0d99ff;
+  --replit-light-primary-hover: #0a85d9;
+  --replit-light-primary-active: #0971b3;
+  
+  /* Dark Theme Variables */
+  --replit-dark-bg: #1e1e1e;
+  --replit-dark-bg-secondary: #252526;
+  --replit-dark-bg-tertiary: #2d2d2d;
+  --replit-dark-text: #e0e0e0;
+  --replit-dark-text-secondary: #a0a0a0;
+  --replit-dark-border: #3c3c3c;
+  --replit-dark-primary: #0d99ff;
+  --replit-dark-primary-hover: #3db1ff;
+  --replit-dark-primary-active: #6bc4ff;
+}
+
+/* Base styles */
+body {
+  @apply font-sans text-base leading-relaxed;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Light Theme */
+:root, .light-theme {
+  --background: var(--replit-light-bg);
+  --background-secondary: var(--replit-light-bg-secondary);
+  --background-tertiary: var(--replit-light-bg-tertiary);
+  --text: var(--replit-light-text);
+  --text-secondary: var(--replit-light-text-secondary);
+  --border: var(--replit-light-border);
+  --primary: var(--replit-light-primary);
+  --primary-hover: var(--replit-light-primary-hover);
+  --primary-active: var(--replit-light-primary-active);
+  
+  color-scheme: light;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Dark Theme */
+.dark-theme {
+  --background: var(--replit-dark-bg);
+  --background-secondary: var(--replit-dark-bg-secondary);
+  --background-tertiary: var(--replit-dark-bg-tertiary);
+  --text: var(--replit-dark-text);
+  --text-secondary: var(--replit-dark-text-secondary);
+  --border: var(--replit-dark-border);
+  --primary: var(--replit-dark-primary);
+  --primary-hover: var(--replit-dark-primary-hover);
+  --primary-active: var(--replit-dark-primary-active);
+  
+  color-scheme: dark;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Button Styles */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-hover active:bg-primary-active;
+}
+
+.btn-secondary {
+  @apply bg-background-secondary text-foreground hover:bg-background-tertiary border border-border;
+}
+
+/* Input Styles */
+.input {
+  @apply px-3 py-2 border border-border rounded-md bg-background-secondary text-foreground 
+         focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+         transition-colors duration-200;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-background-secondary rounded-lg border border-border overflow-hidden;
+}
+
+/* Code Block Styles */
+.code-block {
+  @apply font-mono text-sm p-4 rounded-md overflow-x-auto;
+  background-color: var(--background-tertiary);
+  border: 1px solid var(--border);
+}
+
+/* Toggle Switch */
+.theme-toggle {
+  @apply relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none;
+  background-color: var(--background-tertiary);
+}
+
+.theme-toggle:focus {
+  @apply ring-2 ring-primary ring-offset-2 ring-offset-background;
+}
+
+.theme-toggle span {
+  @apply inline-block w-4 h-4 transform rounded-full bg-white transition-transform;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .theme-toggle span {
+  transform: translateX(1.5rem);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Animation for theme transition */
+.theme-transition * {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}

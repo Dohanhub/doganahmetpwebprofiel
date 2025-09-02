@@ -26,7 +26,7 @@ const iconFor = (icon: string) => {
 };
 
 export function BrandToggle() {
-  const [brand, setBrand] = useState<Brand>("orange");
+  const [brand, setBrand] = useState<Brand>("modern");
 
   useEffect(() => {
     if (typeof window === "undefined") return;

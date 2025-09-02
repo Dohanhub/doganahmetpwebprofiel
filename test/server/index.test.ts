@@ -106,21 +106,21 @@ describe('Server Index', () => {
   });
 
   describe('Server Initialization', () => {
-    it('should create express app', () => {
-      require('../../server/index');
+    it('should create express app', async () => {
+      await import('../../server/index');
       
       expect(express).toHaveBeenCalled();
     });
 
-    it('should apply helmet middleware', () => {
-      require('../../server/index');
+    it('should apply helmet middleware', async () => {
+      await import('../../server/index');
       
       expect(helmet).toHaveBeenCalled();
       expect(mockApp.use).toHaveBeenCalledWith(expect.any(Function));
     });
 
-    it('should apply rate limiting middleware', () => {
-      require('../../server/index');
+    it('should apply rate limiting middleware', async () => {
+      await import('../../server/index');
       
       expect(rateLimit).toHaveBeenCalledWith({
         windowMs: 15 * 60 * 1000,
@@ -129,71 +129,71 @@ describe('Server Index', () => {
       expect(mockApp.use).toHaveBeenCalledWith(expect.any(Function));
     });
 
-    it('should apply session middleware', () => {
-      require('../../server/index');
+    it('should apply session middleware', async () => {
+      await import('../../server/index');
       
       expect(mockApp.use).toHaveBeenCalledWith(expect.any(Function));
     });
 
-    it('should apply passport middleware', () => {
-      require('../../server/index');
+    it('should apply passport middleware', async () => {
+      await import('../../server/index');
       
       expect(mockApp.use).toHaveBeenCalledWith(expect.any(Function));
     });
 
-    it('should apply JSON parsing middleware', () => {
-      require('../../server/index');
+    it('should apply JSON parsing middleware', async () => {
+      await import('../../server/index');
       
       expect(mockApp.use).toHaveBeenCalledWith(expect.any(Function));
     });
 
-    it('should apply URL encoding middleware', () => {
-      require('../../server/index');
+    it('should apply URL encoding middleware', async () => {
+      await import('../../server/index');
       
       expect(mockApp.use).toHaveBeenCalledWith(expect.any(Function));
     });
   });
 
   describe('Route Registration', () => {
-    it('should register API routes', () => {
-      require('../../server/index');
+    it('should register API routes', async () => {
+      await import('../../server/index');
       
       expect(mockApp.use).toHaveBeenCalledWith('/api', expect.any(Function));
     });
 
-    it('should register static file serving', () => {
-      require('../../server/index');
+    it('should register static file serving', async () => {
+      await import('../../server/index');
       
       expect(mockApp.use).toHaveBeenCalledWith(expect.any(Function));
     });
 
-    it('should register catch-all route for SPA', () => {
-      require('../../server/index');
+    it('should register catch-all route for SPA', async () => {
+      await import('../../server/index');
       
       expect(mockApp.get).toHaveBeenCalledWith('*', expect.any(Function));
     });
   });
 
   describe('Server Listening', () => {
-    it('should start server on specified port', () => {
+    it('should start server on specified port', async () => {
       const mockPort = 3000;
       process.env.PORT = mockPort.toString();
       
-      require('../../server/index');
+      await import('../../server/index');
       
       expect(mockApp.listen).toHaveBeenCalledWith(mockPort, expect.any(Function));
     });
 
-    it('should use default port when PORT not specified', () => {
+    it('should use default port when PORT not specified', async () => {
       delete process.env.PORT;
       
-      require('../../server/index');
+      await import('../../server/index');
       
       expect(mockApp.listen).toHaveBeenCalledWith(3000, expect.any(Function));
     });
 
-    it('should log server start message', () => {
-      require('../../server/index');
+    it('should log server start message', async () => {
+      await import('../../server/index');
       
       const listenCallback = mockApp.listen.mock.calls[0][1];
       listenCallback();

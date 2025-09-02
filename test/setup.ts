@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { vi } from 'vitest';
+import { vi, beforeAll, afterAll } from 'vitest';
 
 // Mock environment variables for testing
 process.env.NODE_ENV = 'test';
@@ -14,16 +14,26 @@ if (typeof window !== 'undefined') {
 // Mock framer-motion
 vi.mock('framer-motion', () => {
   const React = require('react');
+  
+  const MockMotionDiv = React.forwardRef((props: any, ref: any) => {
+    // Filter out framer-motion specific props
+    const { 
+      initial: _initial, 
+      animate: _animate, 
+      exit: _exit, 
+      transition: _transition, 
+      whileHover: _whileHover, 
+      whileTap: _whileTap, 
+      ...domProps 
+    } = props;
+    return React.createElement('div', { ...domProps, ref }, props.children);
+  });
+  
+  MockMotionDiv.displayName = 'MockMotionDiv';
+  
   return {
     motion: {
-      div: React.forwardRef((props: any, ref: any) => {
-        // Filter out framer-motion specific props
-        const { 
-          initial, animate, exit, transition, whileHover, whileTap, 
-          ...domProps 
-        } = props;
-        return React.createElement('div', { ...domProps, ref }, props.children);
-      })
+      div: MockMotionDiv
     },
     AnimatePresence: ({ children }: any) => children
   };

@@ -1,34 +1,34 @@
-/* Modern Theme System - Professional Executive Website */
+/* Modern Theme System - Professional Executive Website (dogan.ai style) */
 
 /* Base CSS Variables */
 :root {
-  /* Orange & White Color System */
-  --primary-h: 25;
-  --primary-s: 95%;
-  --primary-l: 55%;
+  /* Modern Professional Color System - Clean & Minimal */
+  --primary-h: 220;
+  --primary-s: 15%;
+  --primary-l: 25%;
   
-  --accent-h: 35;
-  --accent-s: 90%;
-  --accent-l: 65%;
+  --accent-h: 200;
+  --accent-s: 60%;
+  --accent-l: 50%;
   
-  /* Orange & White Light Theme */
+  /* Clean Light Theme */
   --background: 0 0% 100%;
-  --foreground: 0 0% 10%;
+  --foreground: 220 15% 15%;
   
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 10%;
+  --card-foreground: 220 15% 15%;
   
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 10%;
+  --popover-foreground: 220 15% 15%;
   
   --primary: var(--primary-h) var(--primary-s) var(--primary-l);
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 25 10% 95%;
-  --secondary-foreground: 0 0% 15%;
+  --secondary: 220 15% 97%;
+  --secondary-foreground: 220 15% 25%;
   
-  --muted: 25 15% 97%;
-  --muted-foreground: 0 0% 40%;
+  --muted: 220 15% 96%;
+  --muted-foreground: 220 15% 45%;
   
   --accent: var(--accent-h) var(--accent-s) var(--accent-l);
   --accent-foreground: 0 0% 100%;
@@ -36,9 +36,9 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 25 20% 85%;
-  --input: 25 20% 92%;
-  --ring: var(--primary-h) var(--primary-s) var(--primary-l);
+  --border: 220 15% 90%;
+  --input: 220 15% 95%;
+  --ring: var(--accent-h) var(--accent-s) var(--accent-l);
   
   /* Semantic Colors */
   --success: 142 76% 36%;
@@ -55,54 +55,54 @@
   --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--muted)) 100%);
   --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
   
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  /* Subtle Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.12);
   
-  /* Transitions */
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 250ms ease-in-out;
-  --transition-slow: 400ms ease-in-out;
+  /* Smooth Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Spacing */
-  --radius: 0.5rem;
-  --radius-sm: 0.25rem;
+  /* Modern Spacing */
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
 }
 
-/* Orange & White Dark Theme */
+/* Modern Dark Theme */
 .dark {
-  --background: 25 15% 8%;
+  --background: 220 15% 8%;
   --foreground: 0 0% 95%;
   
-  --card: 25 20% 10%;
+  --card: 220 20% 10%;
   --card-foreground: 0 0% 95%;
   
-  --popover: 25 20% 10%;
+  --popover: 220 20% 10%;
   --popover-foreground: 0 0% 95%;
   
-  --primary: var(--primary-h) var(--primary-s) 60%;
+  --primary: var(--primary-h) var(--primary-s) 70%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 25 25% 15%;
+  --secondary: 220 25% 15%;
   --secondary-foreground: 0 0% 90%;
   
-  --muted: 25 25% 15%;
+  --muted: 220 25% 15%;
   --muted-foreground: 0 0% 65%;
   
-  --accent: var(--accent-h) var(--accent-s) 65%;
+  --accent: var(--accent-h) var(--accent-s) 60%;
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 95%;
   
-  --border: 25 30% 20%;
-  --input: 25 30% 18%;
-  --ring: var(--primary-h) var(--primary-s) 60%;
+  --border: 220 30% 20%;
+  --input: 220 30% 18%;
+  --ring: var(--accent-h) var(--accent-s) 60%;
   
   /* Semantic Colors - Dark */
   --success: 142 76% 45%;
@@ -119,12 +119,12 @@
   --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--muted)) 100%);
   --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
   
-  /* Shadows - Dark */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+  /* Subtle Shadows - Dark */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.25);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.35);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4);
 }
 
 /* Theme Application */
@@ -259,87 +259,51 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Brand Palettes (accent-only switch, light/dark aware via variables) */
-/* Default brand is Orange; override HSL bases via data-brand on <html> */
-html[data-brand="orange"] {
-  --primary-h: 25;  /* orange */
-  --primary-s: 95%;
-  --primary-l: 55%;
-  --accent-h: 35;   /* amber */
-  --accent-s: 90%;
-  --accent-l: 65%;
-}
-
-html[data-brand="royal"] {
-  --primary-h: 221; /* royal blue */
-  --primary-s: 83%;
-  --primary-l: 53%;
-  --accent-h: 265;  /* purple */
-  --accent-s: 80%;
-  --accent-l: 60%;
-}
-
-html[data-brand="emerald"] {
-  --primary-h: 160; /* teal */
-  --primary-s: 84%;
-  --primary-l: 40%;
-  --accent-h: 145;  /* green */
-  --accent-s: 65%;
-  --accent-l: 45%;
-}
-
-html[data-brand="slate"] {
-  --primary-h: 210; /* slate/blue-gray */
-  --primary-s: 20%;
-  --primary-l: 45%;
-  --accent-h: 200;  /* light blue */
+/* Brand Palettes - Modern Professional (dogan.ai style) */
+/* Default brand is Modern Professional; override HSL bases via data-brand on <html> */
+html[data-brand="modern"] {
+  --primary-h: 220;  /* modern blue-gray */
+  --primary-s: 15%;
+  --primary-l: 25%;
+  --accent-h: 200;   /* clean blue */
   --accent-s: 60%;
   --accent-l: 50%;
 }
 
-html[data-brand="desert"] {
-  --primary-h: 38;  /* golden */
-  --primary-s: 90%;
-  --primary-l: 55%;
-  --accent-h: 28;  /* warm amber */
-  --accent-s: 85%;
-  --accent-l: 58%;
-}
-
-html[data-brand="midnight"] {
-  --primary-h: 230; /* deep blue */
-  --primary-s: 60%;
-  --primary-l: 40%;
-  --accent-h: 260;  /* violet */
-  --accent-s: 70%;
-  --accent-l: 55%;
-}
-
-html[data-brand="ink"] {
-  --primary-h: 220; /* neutral blue-gray for accents */
+html[data-brand="minimal"] {
+  --primary-h: 220; /* minimal gray */
   --primary-s: 10%;
-  --primary-l: 35%;
-  --accent-h: 220;
-  --accent-s: 12%;
-  --accent-l: 20%;
+  --primary-l: 30%;
+  --accent-h: 200;  /* subtle blue */
+  --accent-s: 40%;
+  --accent-l: 60%;
 }
 
-html[data-brand="sapphire"] {
-  --primary-h: 205; /* vivid blue */
-  --primary-s: 85%;
-  --primary-l: 45%;
-  --accent-h: 250;  /* violet */
+html[data-brand="executive"] {
+  --primary-h: 220; /* executive navy */
+  --primary-s: 20%;
+  --primary-l: 20%;
+  --accent-h: 200;  /* professional blue */
   --accent-s: 70%;
   --accent-l: 55%;
 }
 
-html[data-brand="rose"] {
-  --primary-h: 350; /* rose */
-  --primary-s: 70%;
-  --primary-l: 55%;
-  --accent-h: 28;   /* warm amber accent */
+html[data-brand="clean"] {
+  --primary-h: 220; /* clean slate */
+  --primary-s: 15%;
+  --primary-l: 35%;
+  --accent-h: 200;  /* modern accent */
+  --accent-s: 50%;
+  --accent-l: 50%;
+}
+
+html[data-brand="professional"] {
+  --primary-h: 220; /* professional */
+  --primary-s: 18%;
+  --primary-l: 28%;
+  --accent-h: 200;  /* accent */
   --accent-s: 65%;
-  --accent-l: 60%;
+  --accent-l: 52%;
 }
 
 /* Reduced Motion and Paint Optimization */

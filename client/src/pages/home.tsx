@@ -91,28 +91,29 @@ export default function Home() {
         ref={heroRef}
         className="relative bg-muted overflow-hidden min-h-screen flex items-center"
         initial="hidden"
-        animate={heroVisible ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
         {/* Content Container */}
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24 text-center">
           
-          {/* Name with Yellow Underline - Enhanced animations */}
+          {/* Name with Modern Accent Line - Enhanced animations */}
           <motion.div 
             className="mb-8"
             variants={itemVariants}
           >
             <motion.h1 
-              className="text-5xl sm:text-6xl md:text-7xl font-bold text-black dark:text-white mb-4 font-playfair" 
+              className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-4 font-playfair" 
               data-testid="text-hero-title"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               Ahmet Doğan
             </motion.h1>
-            {/* Orange Accent Line - Enhanced animation */}
+            {/* Modern Accent Line - Enhanced animation */}
             <motion.div 
-              className="w-24 sm:w-32 h-0.5 bg-primary mx-auto"
+              className="w-24 sm:w-32 h-0.5 bg-accent mx-auto"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
@@ -125,7 +126,7 @@ export default function Home() {
             variants={itemVariants}
           >
             <motion.p 
-              className="text-lg sm:text-xl md:text-2xl font-medium text-blue-600 dark:text-blue-400 font-montserrat tracking-wide"
+              className="text-lg sm:text-xl md:text-2xl font-medium text-accent font-montserrat tracking-wide"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
@@ -136,13 +137,12 @@ export default function Home() {
           {/* Tagline - Enhanced animation */}
           <motion.div variants={itemVariants}>
             <motion.p 
-              className="text-xl sm:text-2xl md:text-3xl italic text-black dark:text-gray-200 font-ibm-plex leading-relaxed max-w-4xl mx-auto"
+              className="text-xl sm:text-2xl md:text-3xl italic text-foreground font-ibm-plex leading-relaxed max-w-4xl mx-auto"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               "Shaping strategy and governance with accredited expertise — delivering impact across borders."
-            </motion.p>
-          </motion.div>
+            </motion.div>
 
           {/* Saudi Premium Residency Badge - Enhanced animation */}
           <motion.div 
@@ -150,7 +150,7 @@ export default function Home() {
             variants={itemVariants}
           >
             <motion.span 
-              className="inline-block px-6 sm:px-8 py-3 bg-gradient-to-r from-[#0047AB] to-[#009873] text-white rounded-full text-base sm:text-lg font-semibold shadow-lg"
+              className="inline-block px-6 sm:px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full text-base sm:text-lg font-semibold shadow-lg"
               whileHover={{ 
                 scale: 1.05,
                 rotate: 1,
@@ -223,7 +223,8 @@ export default function Home() {
         id="expertise" 
         className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative"
         initial="hidden"
-        animate={expertiseVisible ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
         {/* Enhanced Background Pattern */}
@@ -446,7 +447,8 @@ export default function Home() {
         ref={credentialsRef}
         className="py-16 bg-white"
         initial="hidden"
-        animate={credentialsVisible ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

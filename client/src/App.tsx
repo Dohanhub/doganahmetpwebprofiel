@@ -108,7 +108,7 @@ function App() {
         // In production, you'd send this to your error monitoring service
       }}
     >
-      <ThemeProvider defaultTheme="light" storageKey="dogan-theme">
+      <ThemeProvider defaultTheme="light" storageKey="dogan-theme" defaultBrand="modern">
         <QueryClientProvider client={enhancedQueryClient}>
           <TooltipProvider>
             <div className="min-h-screen bg-background text-foreground transition-all duration-300 ease-in-out">

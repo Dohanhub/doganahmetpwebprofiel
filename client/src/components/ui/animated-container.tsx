@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface AnimatedContainerProps {
@@ -12,6 +12,7 @@ interface AnimatedContainerProps {
   whileTap?: boolean;
   layout?: boolean;
   exit?: boolean;
+  once?: boolean;
 }
 
 const variants = {
@@ -96,27 +97,24 @@ export function AnimatedContainer({
     },
   };
 
-  const MotionComponent = exit ? motion.div : motion.div;
-
   return (
-    <AnimatePresence mode="wait">
-      <MotionComponent
-        className={className}
-        initial="hidden"
-        animate="visible"
-        exit={exit ? "exit" : undefined}
-        variants={customVariants}
-        whileHover={whileHover ? "hover" : undefined}
-        whileTap={whileTap ? "tap" : undefined}
-        layout={layout}
-        transition={{
-          duration,
-          ease: [0.4, 0, 0.2, 1],
-        }}
-      >
-        {children}
-      </MotionComponent>
-    </AnimatePresence>
+    <motion.div
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      exit={exit ? "exit" : undefined}
+      variants={customVariants}
+      whileHover={whileHover ? "hover" : undefined}
+      whileTap={whileTap ? "tap" : undefined}
+      layout={layout}
+      transition={{
+        duration,
+        ease: [0.4, 0, 0.2, 1],
+      }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
@@ -125,17 +123,20 @@ export function StaggeredContainer({
   className = "",
   staggerDelay = 0.1,
   direction = "up",
+  once = true,
 }: {
   children: ReactNode;
   className?: string;
   staggerDelay?: number;
   direction?: "up" | "down" | "left" | "right";
+  once?: boolean;
 }) {
   return (
     <motion.div
       className={className}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once, margin: "-100px" }}
       variants={{
         visible: {
           transition: {

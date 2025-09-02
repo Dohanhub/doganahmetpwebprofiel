@@ -91,14 +91,13 @@ export default function Home() {
         ref={heroRef}
         className="relative bg-muted overflow-hidden min-h-screen flex items-center"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        animate={heroVisible ? "visible" : "hidden"}
         variants={containerVariants}
       >
         {/* Content Container */}
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24 text-center">
           
-          {/* Name with Modern Accent Line - Enhanced animations */}
+          {/* Name with Yellow Underline - Enhanced animations */}
           <motion.div 
             className="mb-8"
             variants={itemVariants}
@@ -111,9 +110,9 @@ export default function Home() {
             >
               Ahmet Doğan
             </motion.h1>
-            {/* Modern Accent Line - Enhanced animation */}
+            {/* Orange Accent Line - Enhanced animation */}
             <motion.div 
-              className="w-24 sm:w-32 h-0.5 bg-accent mx-auto"
+              className="w-24 sm:w-32 h-0.5 bg-primary mx-auto"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
@@ -142,7 +141,8 @@ export default function Home() {
               transition={{ duration: 0.3 }}
             >
               "Shaping strategy and governance with accredited expertise — delivering impact across borders."
-            </motion.div>
+            </motion.p>
+          </motion.div>
 
           {/* Saudi Premium Residency Badge - Enhanced animation */}
           <motion.div 
@@ -150,7 +150,7 @@ export default function Home() {
             variants={itemVariants}
           >
             <motion.span 
-              className="inline-block px-6 sm:px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-full text-base sm:text-lg font-semibold shadow-lg"
+              className="inline-block px-6 sm:px-8 py-3 bg-gradient-to-r from-[#0047AB] to-[#009873] text-white rounded-full text-base sm:text-lg font-semibold shadow-lg"
               whileHover={{ 
                 scale: 1.05,
                 rotate: 1,
@@ -223,8 +223,7 @@ export default function Home() {
         id="expertise" 
         className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        animate={expertiseVisible ? "visible" : "hidden"}
         variants={containerVariants}
       >
         {/* Enhanced Background Pattern */}
@@ -447,8 +446,7 @@ export default function Home() {
         ref={credentialsRef}
         className="py-16 bg-white"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        animate={credentialsVisible ? "visible" : "hidden"}
         variants={containerVariants}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
